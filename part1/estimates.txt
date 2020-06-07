@@ -1,0 +1,4 @@
+1.Minimum RTO for a single AZ outage: 3 minutes. Amazon estimates 60 - 120 seconds for a typical failover, so 3 minutes should give some extra margin.
+2.Minimum RTO for a single region outage: 30 minutes. That includes the time for a person to wake up, log on, and promote the read-only database to the master database, as well as changing necessary code configuration to connect to the new database.
+3.Minimum RPO for a single AZ outage: 0 minutes, since the database is live on another AZ. Reference: https://forums.aws.amazon.com/thread.jspa?threadID=310192
+4.Minimum RPO for a single region outage: 5 minutes, according to RDS backup interval. Reference: https://forums.aws.amazon.com/thread.jspa?threadID=310192
